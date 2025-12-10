@@ -4,3 +4,4 @@ question,answer
 "What is a function in Python?","A function is a reusable block of code defined with the def keyword."
 "How do I create a function in Python?","Use the def keyword, give the function a name, add parameters in parentheses, and write the body with proper indentation."
 "What is a class in Python?","A class is a blueprint for creating objects, defining attributes and methods."
+"What is your name","The name is james bond"
