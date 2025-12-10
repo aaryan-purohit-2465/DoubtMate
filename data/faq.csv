@@ -1,0 +1,6 @@
+question,answer
+"What is a variable in Python?","A variable in Python is a name that refers to a value stored in memory."
+"What is a list in Python?","A list is an ordered, mutable collection of items, defined using square brackets []."
+"What is a function in Python?","A function is a reusable block of code defined with the def keyword."
+"How do I create a function in Python?","Use the def keyword, give the function a name, add parameters in parentheses, and write the body with proper indentation."
+"What is a class in Python?","A class is a blueprint for creating objects, defining attributes and methods."
