@@ -1,0 +1,17 @@
+In traditional classroom settings, students are quite reluctant to ask doubts due to 
+shortage of time, hesitation, and lack of immediate access to teachers. Because 
+of this, queries remain unaired, and gaps in understanding persist. This project 
+focuses on the development of a Real-Time Classroom Doubt Solver, a teacher
+independent intelligent system that will provide instantaneous answers for the 
+student queries with the use of Machine Learning techniques.
+The system allows students to type and submit their doubts. These are then 
+processed with the help of NLP. A similarity-based ML model TFIDF with cosine 
+similarity in the first version) compares the student's question with an existing 
+curated knowledge base of question–answer pairs. The system picks out the most 
+relevant match and responds with an apt answer in real time.
+This solution encourages autonomous learning, reduces disruption in the 
+classroom, and enables clarification of continuous doubts without the intervention 
+of a teacher. The project will be further extended by advanced models, multi
+subject support, feedback learning, and a simple user interface. In general, this 
+system will provide better efficiency in learning through immediate, accurate, and 
+accessible doubt resolution among students.
