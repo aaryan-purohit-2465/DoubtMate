@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env/
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Data artifacts
+*.log
+*.tmp
+*.pickle
+*.pkl
