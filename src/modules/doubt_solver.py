@@ -15,4 +15,18 @@ class DoubtSolver:
 
     def ask(self, question):
         idx, score = get_best_match(self.vectorizer, self.vectors, question)
-        return self.answers[idx], score
+        return self.answers[idx], 
+    def safe_ask(self, question):
+    try:
+        if not question or question.strip() == "":
+            return "Please enter a valid question.", 0.0
+
+        answer, score = self.ask(question)
+
+        if score < 0.20:
+            return "I couldn't find a close enough match. Please rephrase your question.", score
+
+        return answer, score
+
+    except Exception as e:
+        return f"An error occurred: {str(e)}", 0.0

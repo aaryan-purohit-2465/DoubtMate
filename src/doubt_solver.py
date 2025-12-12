@@ -147,3 +147,17 @@ def ask(self, question):
     ...
     log_query(question, answer, score)
     return answer, score
+def safe_ask(self, question):
+    try:
+        if not question or question.strip() == "":
+            return "Please enter a valid question.", 0.0
+
+        answer, score = self.ask(question)
+
+        if score < 0.20:
+            return "I couldn't find a close enough match. Please rephrase your question.", score
+
+        return answer, score
+
+    except Exception as e:
+        return f"An error occurred: {str(e)}", 0.0
