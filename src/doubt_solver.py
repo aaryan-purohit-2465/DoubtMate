@@ -141,3 +141,9 @@ if __name__ == "__main__":
         print("\nTop matches:")
         for idx, s, oq, a in top:
             print(f" - idx={idx}, score={s:.3f}, Q={oq}")
+            from logger import log_query
+
+def ask(self, question):
+    ...
+    log_query(question, answer, score)
+    return answer, score
