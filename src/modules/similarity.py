@@ -1,9 +1,9 @@
-from sklearn.metrics.pairwise import cosine_similarity
+# src/modules/similarity.py
 import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
 
-def get_best_match(vectorizer, vectors, user_question):
+def get_top_matches(vectorizer, vectors, user_question, top_n=3):
     user_vec = vectorizer.transform([user_question])
-    similarity_scores = cosine_similarity(user_vec, vectors)[0]
-    best_idx = np.argmax(similarity_scores)
-    best_score = similarity_scores[best_idx]
-    return best_idx, float(best_score)
+    scores = cosine_similarity(user_vec, vectors)[0]
+    idxs = np.argsort(scores)[::-1][:top_n]
+    return idxs, scores[idxs]
