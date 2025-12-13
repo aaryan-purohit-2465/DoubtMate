@@ -1,5 +1,3 @@
-# src/doubt_solver.py
-
 import pandas as pd
 from src.config import DATASET_PATH, MIN_SIMILARITY_THRESHOLD
 from src.logger import log_query
