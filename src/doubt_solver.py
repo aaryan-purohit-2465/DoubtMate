@@ -48,3 +48,32 @@ class DoubtSolver:
                     self.df.iloc[i]["answer"],
                 )
             )
+def safe_ask(self, question, top_n=3):
+    if not question or question.strip() == "":
+        return "Please enter a valid question.", 0.0, []
+
+    try:
+        result = self.ask(question, top_n)
+
+        if result is None:
+            return "No answer found.", 0.0, []
+
+        answer, score, matches = result
+
+        if score < MIN_SIMILARITY_THRESHOLD:
+            return (
+                "I couldn't find a close enough match. Please rephrase your question.",
+                score,
+                matches,
+            )
+
+        return answer, score, matches
+
+    except Exception as e:
+        return f"Error occurred: {str(e)}", 0.0, []
+
+
+        return answer, score, matches
+
+    except Exception as e:
+        return f"Error occurred: {str(e)}", 0.0, []
