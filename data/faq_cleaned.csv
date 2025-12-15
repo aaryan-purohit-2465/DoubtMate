@@ -5,3 +5,14 @@ What is a function in Python?,A function is a reusable block of code defined wit
 How do I create a function in Python?,"Use the def keyword, give the function a name, add parameters in parentheses, and write the body with proper indentation.",Python Basics
 What is a class in Python?,"A class is a blueprint for creating objects, defining attributes and methods.",Python Basics
 What is your name,The name is james bond,Python Basics
+What is Python?,Python is a high-level interpreted programming language known for its simplicity and readability.
+Why is Python popular?,Python is popular because it is easy to learn, versatile, and has a large number of libraries and community support.
+What is a variable in Python?,A variable is a name used to store data values in memory.
+What are data types?,Data types define the type of data a variable can hold such as int, float, string, and boolean.
+What is a function?,A function is a reusable block of code that performs a specific task.
+What is a loop?,A loop is used to execute a block of code repeatedly based on a condition.
+Difference between for loop and while loop?,A for loop is used when the number of iterations is known while a while loop is used when the condition is checked dynamically.
+What is Object Oriented Programming?,Object Oriented Programming is a programming paradigm based on objects and classes.
+What is inheritance?,Inheritance allows one class to acquire the properties and methods of another class.
+What is polymorphism?,Polymorphism allows the same method name to have different implementations.
+
