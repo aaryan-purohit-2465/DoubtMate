@@ -1,61 +1,52 @@
-# 🤖 DoubtMate — Real-Time Classroom Doubt Solver (ML-Based)
+# 🤖 DoubtMate — Real-Time Classroom Doubt Solver
 
-DoubtMate is an intelligent, teacher-independent system that provides instant answers to student doubts using Natural Language Processing (NLP). Students can type a question, and the model returns the most relevant answer based on similarity search.
-
-This project is developed collaboratively by a 5-member team and will be deployed on **18 December 2025** using Streamlit Cloud.
+DoubtMate is a machine learning–based, teacher-independent classroom doubt solver that provides instant answers to student queries.  
+Students can type their doubts, and the system responds with the most relevant answer using Natural Language Processing (NLP).
 
 ---
 
 ## 🎯 Objectives
 
-- Provide real-time doubt clarification without teacher involvement  
-- Reduce hesitation in classrooms and allow continuous learning  
-- Match student queries with the closest pre-existing answer using NLP  
-- Build a simple, fast, and deployable ML pipeline  
-- Deliver a clean user interface for easy usage  
+- Provide instant doubt resolution without teacher intervention  
+- Reduce hesitation among students in asking questions  
+- Support continuous and self-paced learning  
+- Use NLP techniques to match student queries with relevant answers  
+- Build a simple, fast, and deployable ML-based solution  
 
 ---
 
 ## 🧠 How the Model Works
 
-### 1️⃣ Preprocessing  
-- Lowercase text  
-- Remove unnecessary characters  
-- Clean and normalize questions for consistent processing  
+1. **Text Preprocessing**  
+   Student questions are cleaned by removing unnecessary characters and normalizing text.
 
-### 2️⃣ Vectorization  
-- Convert cleaned questions into numerical vectors using **TF-IDF**
+2. **Vectorization**  
+   Questions are converted into numerical form using **TF-IDF (Term Frequency–Inverse Document Frequency)**.
 
-### 3️⃣ Similarity Search  
-- Compute **cosine similarity** between the student's question and dataset questions  
-- Select the highest similarity score  
+3. **Similarity Matching**  
+   The student query is compared with stored questions using **cosine similarity**.
 
-### 4️⃣ Output  
-- Return the answer corresponding to the most relevant matched question  
-
-This ensures that even if two questions are worded differently, the system can still identify the closest match.
+4. **Answer Retrieval**  
+   The answer corresponding to the most similar question is returned in real time.
 
 ---
 
 ## 👥 Team
 
-- **Aaryan (Lead)**  
-- **Abhinav**  
-- **Atharv**  
-- **Sharath**  
-- **Sidhant**
-
-Each team member contributes through dedicated branches merged via Pull Requests.
+- Aaryan (Team Lead)  
+- Abhinav  
+- Atharv  
+- Sharath  
+- Sidhant  
 
 ---
 
 ## 🚀 Deployment
 
-The final app will be deployed on **Streamlit Community Cloud**, directly connected to this GitHub repository. Users will be able to type doubts and receive instant answers through a clean and interactive UI.
+The application will be deployed using **Streamlit Community Cloud** with a public URL for access.
 
 ---
 
 ## 🏁 Goal
 
-To build a fast, accurate, and accessible doubt-solving tool that enhances learning and supports students in real time.
-
+To build a reliable, real-time doubt-solving system that enhances learning efficiency and promotes independent problem-solving among students.
