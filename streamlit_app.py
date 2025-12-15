@@ -16,12 +16,18 @@ solver = load_solver()
 user_question = st.text_input("Enter your doubt")
 
 if st.button("Get Answer"):
-    answer, score, top_matches = solver.safe_ask(user_question)
+    with st.spinner("Thinking..."):
+        answer, score, top_matches = solver.safe_ask(user_question)
+
 
     st.subheader("Answer")
-    st.success(answer)
+    st.markdown(f"### ✅ Answer\n{answer}")
 
-    st.write(f"**Similarity Score:** {score:.3f}")
+
+    st.caption(f"Similarity confidence: {score:.2f}")
+    if score < 0.25:
+     st.warning("⚠️ Answer confidence is low. Consider rephrasing your question.")
+
 
     if top_matches:
         st.subheader("Similar Questions")
