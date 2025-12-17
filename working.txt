@@ -1,0 +1,23 @@
+The Real-Time Classroom Doubt Solver was developed as an intelligent,
+teacher-independent system to provide instant clarification of student doubts using Machine Learning and Natural Language Processing techniques.
+The system operated through a structured sequence of steps to ensure accurate and efficient doubt resolution.
+
+Initially, a curated knowledge base consisting of predefined question–answer pairs was created and stored in the system database. 
+These questions covered relevant academic topics and served as the reference dataset for answering student queries.
+
+When a student entered a doubt through the input interface, 
+the system captured the query and forwarded it to the Natural Language Processing (NLP) module. 
+The query underwent preprocessing steps such as text normalization, tokenization, 
+and removal of irrelevant words to convert the raw input into a machine-understandable format.
+
+The processed query was then transformed into a numerical vector using the Term Frequency–Inverse Document Frequency (TF-IDF) technique. 
+Similarly, all questions in the knowledge base had been previously vectorized using the same TF-IDF model to maintain consistency.
+
+Once vectorization was completed, cosine similarity was applied to compare the student’s query vector with all existing question vectors in the knowledge base. 
+The system calculated similarity scores and identified the question with the highest similarity value, indicating the closest semantic match.
+
+After identifying the most relevant question, the corresponding answer was retrieved from the database and displayed to the student in real time. 
+This process ensured quick and accurate responses without requiring teacher intervention.
+
+The completed system successfully reduced classroom interruptions, encouraged independent learning, and enabled students to resolve their doubts instantly. 
+The modular design of the project allowed easy scalability, making it suitable for future enhancements such as multi-subject support, advanced NLP models, feedback-based learning, and improved user interfaces.
