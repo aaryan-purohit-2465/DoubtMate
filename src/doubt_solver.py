@@ -1,77 +1,55 @@
+# src/doubt_solver.py
 import pandas as pd
-from src.config import DATASET_PATH, MIN_SIMILARITY_THRESHOLD
-from src.logger import log_query
-
-from src.modules.preprocessing import preprocess_questions, clean_text
-from src.modules.vectorizer import create_vectorizer
-from src.modules.similarity import get_top_matches
-
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 class DoubtSolver:
-    def __init__(self, dataset_path=None):
-        if dataset_path is None:
-            dataset_path = DATASET_PATH
+    def __init__(self, dataset_path="data/faq_cleaned.csv"):
+        self.df = pd.read_csv(dataset_path)
+        # Ensure column name used: "question" and "answer"
+        if "question" not in self.df.columns or "answer" not in self.df.columns:
+            raise ValueError("Dataset must contain columns: 'question' and 'answer'")
+        self.vectorizer = TfidfVectorizer(stop_words="english")
+        self.vectors = self.vectorizer.fit_transform(self.df["question"].astype(str))
 
-        # Load dataset
-        df = pd.read_csv(dataset_path)
+    def ask(self, question):
+        question = str(question)
+        qvec = self.vectorizer.transform([question])
+        sims = cosine_similarity(qvec, self.vectors)[0]
+        best_idx = int(sims.argmax())
+        best_score = float(sims[best_idx])
+        answer = str(self.df.iloc[best_idx]["answer"])
+        return answer, best_score
 
-        # Basic validation
-        if "question" not in df.columns or "answer" not in df.columns:
-            raise ValueError("Dataset must contain 'question' and 'answer' columns")
+    def safe_ask(self, question, top_n=3):
+        # Always return exactly (answer, score, top_matches)
+        if not question or str(question).strip() == "":
+            return "Please enter a valid question.", 0.0, []
 
-        # Preprocess questions
-        df = preprocess_questions(df)
-        self.df = df.reset_index(drop=True)
+        try:
+            answer, score = self.ask(question)
 
-        self.questions = self.df["cleaned_question"].astype(str).tolist()
-        self.answers = self.df["answer"].astype(str).tolist()
+            sims = cosine_similarity(self.vectorizer.transform([question]), self.vectors)[0]
+            top_idxs = sims.argsort()[-top_n:][::-1]
 
-        # Vectorize
-        self.vectorizer, self.vectors = create_vectorizer(self.questions)
+            top_matches = []
+            seen = set()
+            for idx in top_idxs:
+                q = str(self.df.iloc[int(idx)]["question"])
+                a = str(self.df.iloc[int(idx)]["answer"])
+                s = float(sims[int(idx)])
+                if q in seen:
+                    continue
+                seen.add(q)
+                # keep only meaningful matches
+                if s < 0.10:
+                    continue
+                top_matches.append((int(idx), s, q, a))
 
-    def ask(self, question, top_n=3):
-        cleaned_question = clean_text(question)
+            if not top_matches:
+                return "No relevant answer found. Try rephrasing.", 0.0, []
 
-        idxs, scores = get_top_matches(
-            self.vectorizer, self.vectors, cleaned_question, top_n
-        )
+            return answer, score, top_matches
 
-        top_matches = []
-        for i, s in zip(idxs, scores):
-            top_matches.append(
-                (
-                    int(i),
-                    float(s),
-                    self.df.iloc[i]["question"],
-                    self.df.iloc[i]["answer"],
-                )
-            )
-def safe_ask(self, question, top_n=3):
-    if not question or question.strip() == "":
-        return "Please enter a valid question.", 0.0, []
-
-    try:
-        result = self.ask(question, top_n)
-
-        if result is None:
-            return "No answer found.", 0.0, []
-
-        answer, score, matches = result
-
-        if score < MIN_SIMILARITY_THRESHOLD:
-            return (
-                "I couldn't find a close enough match. Please rephrase your question.",
-                score,
-                matches,
-            )
-
-        return answer, score, matches
-
-    except Exception as e:
-        return f"Error occurred: {str(e)}", 0.0, []
-
-
-        return answer, score, matches
-
-    except Exception as e:
-        return f"Error occurred: {str(e)}", 0.0, []
+        except Exception as e:
+            return f"Error: {str(e)}", 0.0, []

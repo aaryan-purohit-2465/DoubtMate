@@ -1,18 +1,69 @@
-question,answer,topic
-What is a variable in Python?,A variable in Python is a name that refers to a value stored in memory.,Python Basics
-What is a list in Python?,"A list is an ordered, mutable collection of items, defined using square brackets [].",Python Basics
-What is a function in Python?,A function is a reusable block of code defined with the def keyword.,Python Basics
-How do I create a function in Python?,"Use the def keyword, give the function a name, add parameters in parentheses, and write the body with proper indentation.",Python Basics
-What is a class in Python?,"A class is a blueprint for creating objects, defining attributes and methods.",Python Basics
-What is your name,The name is james bond,Python Basics
-What is Python?,Python is a high-level interpreted programming language known for its simplicity and readability.
-Why is Python popular?,Python is popular because it is easy to learn, versatile, and has a large number of libraries and community support.
-What is a variable in Python?,A variable is a name used to store data values in memory.
-What are data types?,Data types define the type of data a variable can hold such as int, float, string, and boolean.
-What is a function?,A function is a reusable block of code that performs a specific task.
-What is a loop?,A loop is used to execute a block of code repeatedly based on a condition.
-Difference between for loop and while loop?,A for loop is used when the number of iterations is known while a while loop is used when the condition is checked dynamically.
-What is Object Oriented Programming?,Object Oriented Programming is a programming paradigm based on objects and classes.
-What is inheritance?,Inheritance allows one class to acquire the properties and methods of another class.
-What is polymorphism?,Polymorphism allows the same method name to have different implementations.
-
+question,answer
+What is Python?,Python is a high level interpreted programming language used for general purpose programming
+Why is Python popular?,Python is popular because it is easy to learn and has many libraries
+What is a variable?,A variable is used to store data values in memory
+What are data types?,Data types specify the kind of value a variable can hold
+What is an integer?,An integer is a whole number without decimals
+What is a float?,A float is a number that contains decimal values
+What is a string?,A string is a sequence of characters enclosed in quotes
+What is a boolean?,A boolean represents true or false values
+What is a list?,A list is an ordered and mutable collection of elements
+What is a tuple?,A tuple is an ordered but immutable collection of elements
+What is a set?,A set is an unordered collection of unique elements
+What is a dictionary?,A dictionary stores data in key value pairs
+What is a function?,A function is a reusable block of code that performs a task
+Why are functions used?,Functions improve code reusability and readability
+What is a loop?,A loop executes a block of code repeatedly
+What is a for loop?,A for loop is used when the number of iterations is known
+What is a while loop?,A while loop runs while a condition is true
+What is break?,Break exits a loop immediately
+What is continue?,Continue skips the current iteration of a loop
+What is pass?,Pass is a null statement that does nothing
+What is Object Oriented Programming?,Object Oriented Programming is based on objects and classes
+What is a class?,A class is a blueprint for creating objects
+What is an object?,An object is an instance of a class
+What is encapsulation?,Encapsulation binds data and methods into a single unit
+What is inheritance?,Inheritance allows one class to acquire properties of another class
+What is polymorphism?,Polymorphism allows the same function to behave differently
+What is abstraction?,Abstraction hides implementation details and shows only essential features
+What is constructor?,A constructor is a special method used to initialize objects
+What is self keyword?,Self refers to the current object in a class
+What is an array?,An array stores multiple elements of the same type
+What is an algorithm?,An algorithm is a step by step solution to a problem
+What is time complexity?,Time complexity measures the execution time of an algorithm
+What is space complexity?,Space complexity measures memory usage of an algorithm
+What is linear search?,Linear search checks each element sequentially
+What is binary search?,Binary search divides the search space into halves
+What is sorting?,Sorting arranges data in a specific order
+What is bubble sort?,Bubble sort repeatedly swaps adjacent elements
+What is selection sort?,Selection sort selects the smallest element and places it correctly
+What is insertion sort?,Insertion sort inserts elements into their correct position
+What is recursion?,Recursion is a function calling itself
+What is stack?,A stack follows last in first out principle
+What is queue?,A queue follows first in first out principle
+What is linked list?,A linked list is a collection of nodes connected by pointers
+What is DBMS?,DBMS is software used to manage databases
+What is a database?,A database is an organized collection of data
+What is SQL?,SQL is used to interact with relational databases
+What is primary key?,A primary key uniquely identifies records in a table
+What is foreign key?,A foreign key links two tables together
+What is normalization?,Normalization reduces redundancy in a database
+What is operating system?,An operating system manages hardware and software resources
+What are system calls?,System calls allow programs to request services from the OS
+What is a process?,A process is a program in execution
+What is a thread?,A thread is the smallest unit of execution
+What is deadlock?,Deadlock occurs when processes wait indefinitely
+What is machine learning?,Machine learning enables systems to learn from data
+What is supervised learning?,Supervised learning uses labeled data
+What is unsupervised learning?,Unsupervised learning uses unlabeled data
+What is classification?,Classification predicts discrete labels
+What is regression?,Regression predicts continuous values
+What is overfitting?,Overfitting occurs when a model learns noise
+What is underfitting?,Underfitting occurs when a model is too simple
+What is NLP?,NLP enables computers to understand human language
+What is TF IDF?,TF IDF converts text into numerical vectors
+What is cosine similarity?,Cosine similarity measures similarity between vectors
+What is a chatbot?,A chatbot is a program that simulates conversation
+What is a doubt solver?,A doubt solver answers user questions automatically
+What is Streamlit?,Streamlit is a Python framework for building ML apps
+What is deployment?,Deployment makes an application accessible online
