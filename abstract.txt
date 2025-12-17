@@ -15,3 +15,4 @@ of a teacher. The project will be further extended by advanced models, multi
 subject support, feedback learning, and a simple user interface. In general, this 
 system will provide better efficiency in learning through immediate, accurate, and 
 accessible doubt resolution among students.
+Team Members - Aaryan, Siddhant, Sharat, Atharv, Abhinav
